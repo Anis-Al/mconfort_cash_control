@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- declared_at / verified_at / create_date / write_date carry groups on the model:
+         the views are stripped of them for sellers automatically. -->
+
+    <record id="cash_safe_deposit_view_form" model="ir.ui.view">
+        <field name="name">cash.safe.deposit.form</field>
+        <field name="model">cash.safe.deposit</field>
+        <field name="arch" type="xml">
+            <form string="Safe Deposit" duplicate="false">
+                <header>
+                    <button name="action_declare" type="object" string="Declare"
+                            class="oe_highlight" invisible="state != 'draft'"
+                            confirm="Declare this deposit? Its lines can no longer be changed and the amount leaves the drawer. Write the deposit number on the envelope."/>
+                    <button name="action_verify" type="object" string="Verify"
+                            class="oe_highlight" invisible="state != 'declared'"
+                            groups="sales_team.group_sale_manager"
+                            confirm="Verify this deposit with the counted amount? It cannot be changed afterwards."/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title" invisible="not name">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <field name="currency_id" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="user_id" invisible="not id"/>
+                            <field name="day_id" invisible="state == 'draft'"/>
+                            <field name="declared_at"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="amount_declared" class="fw-bold"/>
+                        </group>
+                    </group>
+                    <field name="line_ids" readonly="state != 'draft'">
+                        <list editable="bottom">
+                            <field name="currency_id" column_invisible="1"/>
+                            <field name="sale_order_id" domain="[('state', '=', 'sale')]"
+                                   options="{'no_create': True}"/>
+                            <field name="amount" sum="Total"/>
+                        </list>
+                    </field>
+                    <group string="Verification" invisible="state == 'draft'"
+                           groups="sales_team.group_sale_manager">
+                        <group>
+                            <field name="amount_counted" readonly="state != 'declared'"/>
+                            <field name="difference" invisible="state != 'verified'"
+                                   decoration-danger="difference != 0"/>
+                        </group>
+                        <group invisible="state != 'verified'">
+                            <field name="verified_by"/>
+                            <field name="verified_at"/>
+                        </group>
+                        <field name="verification_note" colspan="2" readonly="state != 'declared'"
+                               placeholder="Anything worth noting about this envelope..."/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cash_safe_deposit_view_list" model="ir.ui.view">
+        <field name="name">cash.safe.deposit.list</field>
+        <field name="model">cash.safe.deposit</field>
+        <field name="arch" type="xml">
+            <!-- No decoration on `difference`: the column is stripped for sellers. -->
+            <list string="Safe Deposits" decoration-info="state == 'declared'">
+                <field name="currency_id" column_invisible="1"/>
+                <field name="name"/>
+                <field name="user_id" optional="show"/>
+                <field name="day_id" optional="hide"/>
+                <field name="declared_at" optional="show"/>
+                <field name="amount_declared" sum="Total"/>
+                <field name="amount_counted" groups="sales_team.group_sale_manager"/>
+                <field name="difference" sum="Total" groups="sales_team.group_sale_manager"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'declared'" decoration-success="state == 'verified'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="cash_safe_deposit_view_search" model="ir.ui.view">
+        <field name="name">cash.safe.deposit.search</field>
+        <field name="model">cash.safe.deposit</field>
+        <field name="arch" type="xml">
+            <search string="Safe Deposits">
+                <field name="name"/>
+                <field name="line_ids" string="Order" filter_domain="[('line_ids.sale_order_id', 'ilike', self)]"/>
+                <field name="user_id"/>
+                <filter name="mine" string="My Deposits" domain="[('user_id', '=', uid)]"/>
+                <separator/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="to_verify" string="To Verify" domain="[('state', '=', 'declared')]"/>
+                <filter name="verified" string="Verified" domain="[('state', '=', 'verified')]"/>
+                <filter name="with_difference" string="With a Difference" domain="[('difference', '!=', 0)]"
+                        groups="sales_team.group_sale_manager"/>
+                <group>
+                    <filter name="group_user" string="Seller" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_cash_safe_deposit_new" model="ir.actions.act_window">
+        <field name="name">Declare a Deposit</field>
+        <field name="res_model">cash.safe.deposit</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+
+    <record id="action_cash_safe_deposit_mine" model="ir.actions.act_window">
+        <field name="name">My Deposits</field>
+        <field name="res_model">cash.safe.deposit</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="cash_safe_deposit_view_search"/>
+        <field name="context">{'search_default_mine': 1}</field>
+    </record>
+
+    <record id="action_cash_safe_deposit_to_verify" model="ir.actions.act_window">
+        <field name="name">Deposits to Verify</field>
+        <field name="res_model">cash.safe.deposit</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="cash_safe_deposit_view_search"/>
+        <field name="context">{'search_default_to_verify': 1}</field>
+    </record>
+
+</odoo>

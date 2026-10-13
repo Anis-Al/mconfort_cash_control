@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Top bar: [Dashboard] | My Cash Day | Cash In / Out | Deposits ▾ | [Control ▾] | [Configuration ▾]
+         ([] = controllers only). The app opens on the first visible entry: Dashboard for the
+         controller, My Cash Day (the wizard) for the seller. -->
+    <!-- The app opens on the dashboard page for everyone, set explicitly: a pop-up ("My Cash
+         Day") as landing action leaves a blank screen behind it once closed. -->
+    <menuitem id="menu_cash_control_root"
+              name="Cash Control"
+              web_icon="mconfort_cash_control,static/description/icon.svg"
+              action="action_cash_control_dashboard_client"
+              groups="sales_team.group_sale_salesman"
+              sequence="8"/>
+
+    <!-- Seller -->
+    <menuitem id="menu_my_cash_day"
+              name="My Cash Day"
+              parent="menu_cash_control_root"
+              action="action_my_cash_day"
+              sequence="10"/>
+    <menuitem id="menu_cash_control_movement"
+              name="Cash In / Out"
+              parent="menu_cash_control_root"
+              action="action_cash_control_movement"
+              sequence="20"/>
+    <menuitem id="menu_cash_safe_deposit"
+              name="Deposits"
+              parent="menu_cash_control_root"
+              sequence="30"/>
+    <menuitem id="menu_cash_safe_deposit_new"
+              name="Declare a Deposit"
+              parent="menu_cash_safe_deposit"
+              action="action_cash_safe_deposit_new"
+              sequence="10"/>
+    <menuitem id="menu_cash_safe_deposit_mine"
+              name="My Deposits"
+              parent="menu_cash_safe_deposit"
+              action="action_cash_safe_deposit_mine"
+              sequence="20"/>
+
+    <!-- Everyone: sellers see drawer + shortcuts, controllers also the KPIs.
+         "-group": dropping the attribute would not unlink the group this menu had before. -->
+    <menuitem id="menu_cash_control_dashboard"
+              name="Dashboard"
+              parent="menu_cash_control_root"
+              action="action_cash_control_dashboard_client"
+              groups="-sales_team.group_sale_manager"
+              sequence="5"/>
+
+    <!-- Controller. Leaf menus carry the group too: _visible_menu_ids checks each menu's own groups. -->
+    <menuitem id="menu_cash_control_controller"
+              name="Control"
+              parent="menu_cash_control_root"
+              groups="sales_team.group_sale_manager"
+              sequence="60"/>
+    <menuitem id="menu_cash_safe_deposit_to_verify"
+              name="Deposits to Verify"
+              parent="menu_cash_control_controller"
+              action="action_cash_safe_deposit_to_verify"
+              groups="sales_team.group_sale_manager"
+              sequence="5"/>
+    <menuitem id="menu_cash_control_day"
+              name="Cash Days"
+              parent="menu_cash_control_controller"
+              action="action_cash_control_day"
+              groups="sales_team.group_sale_manager"
+              sequence="10"/>
+    <menuitem id="menu_card_control"
+              name="Card Controls"
+              parent="menu_cash_control_controller"
+              action="action_card_control"
+              groups="sales_team.group_sale_manager"
+              sequence="20"/>
+
+    <menuitem id="menu_cash_control_config"
+              name="Configuration"
+              parent="menu_cash_control_root"
+              groups="base.group_system"
+              sequence="90"/>
+    <!-- ponytail: reuses the Sales settings action; the Cash Control block lives in the Sales app.
+         Saving settings is limited to administrators by res.config.settings.execute(). -->
+    <menuitem id="menu_cash_control_settings"
+              name="Settings"
+              parent="menu_cash_control_config"
+              action="sale.action_sale_config_settings"
+              groups="base.group_system"
+              sequence="10"/>
+
+</odoo>

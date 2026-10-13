@@ -1,0 +1,1381 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mconfort_cash_control
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e-20260724\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-13 15:02+0000\n"
+"PO-Revision-Date: 2026-10-13 15:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "%(count)s / %(total)s days with a difference"
+msgstr "%(count)s / %(total)s journées avec écart"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "%(count)s deposits"
+msgstr "%(count)s dépôts"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "%(count)s envelope(s)"
+msgstr "%(count)s enveloppe(s)"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "%(count)s payments"
+msgstr "%(count)s paiements"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/wizard/cash_control_day_wizard.py:0
+msgid "%(day)s closed"
+msgstr "%(day)s clôturée"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid ""
+"%(deposit)s cannot be changed this way: lines are typed before declaration, "
+"the counted amount and note by a controller before verification."
+msgstr ""
+"%(deposit)s ne peut pas être modifié ainsi : les lignes se saisissent avant "
+"la déclaration, le montant compté et la note par un contrôleur avant la "
+"vérification."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "%(deposit)s is already declared."
+msgstr "%(deposit)s est déjà déclaré."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "+ Cash in"
+msgstr "+ Entrées de caisse"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "+ Cash received"
+msgstr "+ Espèces encaissées"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "30 days"
+msgstr "30 jours"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "7 days"
+msgstr "7 jours"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "90 days"
+msgstr "90 jours"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "<span class=\"text-muted small\">Gap: </span>"
+msgstr "<span class=\"text-muted small\">Écart : </span>"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid "A cash day is already open for %(journal)s. Close it first."
+msgstr ""
+"Une journée de caisse est déjà ouverte pour %(journal)s. Clôturez-la "
+"d'abord."
+
+#. module: mconfort_cash_control
+#: model:ir.model.constraint,message:mconfort_cash_control.constraint_cash_control_day_one_open_day
+msgid "A cash day is already open for this cash journal."
+msgstr "Une journée de caisse est déjà ouverte pour ce journal de caisse."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_movement.py:0
+msgid "A cash movement cannot be changed once recorded."
+msgstr "Un mouvement de caisse ne peut plus être modifié une fois enregistré."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid "A closed cash day cannot be changed."
+msgstr "Une journée de caisse clôturée ne peut plus être modifiée."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "A declared deposit cannot be deleted."
+msgstr "Un dépôt déclaré ne peut pas être supprimé."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/card_control.py:0
+msgid "A validated card control cannot be changed."
+msgstr "Un contrôle carte validé ne peut plus être modifié."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/card_control.py:0
+msgid "A validated card control cannot be deleted."
+msgstr "Un contrôle carte validé ne peut pas être supprimé."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "Add at least one order to the deposit."
+msgstr "Ajoutez au moins une commande au dépôt."
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "All time"
+msgstr "Depuis le début"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__movement_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__amount
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+msgid "Amount"
+msgstr "Montant"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__amount_counted
+msgid "Amount Counted"
+msgstr "Montant compté"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__amount_declared
+msgid "Amount Declared"
+msgstr "Montant déclaré"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_company__cash_reference_float
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_config_settings__cash_reference_float
+msgid ""
+"Amount meant to stay in the drawer after each closing. Informational only."
+msgstr ""
+"Montant destiné à rester dans le tiroir après chaque clôture. Purement "
+"indicatif."
+
+#. module: mconfort_cash_control
+#: model:ir.model.constraint,message:mconfort_cash_control.constraint_cash_safe_deposit_line_order_once
+msgid "An order can appear only once in a deposit."
+msgstr "Une commande ne peut figurer qu'une seule fois dans un dépôt."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+msgid "Anything worth noting about this envelope..."
+msgstr "Toute remarque sur cette enveloppe..."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_form
+msgid "Bank Files"
+msgstr "Fichiers bancaires"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_card_control__difference
+msgid "Bank files total minus Odoo total, once validated."
+msgstr "Total des fichiers bancaires moins total Odoo, une fois validé."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__can_edit_opening
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__can_edit_opening
+msgid "Can Edit Opening"
+msgstr "Ouverture modifiable"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "Cancelled Cash Payments"
+msgstr "Paiements en espèces annulés"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Cancelled cash payments"
+msgstr "Paiements en espèces annulés"
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_card_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.res_config_settings_view_form
+msgid "Card Control"
+msgstr "Contrôle carte"
+
+#. module: mconfort_cash_control
+#: model:ir.actions.act_window,name:mconfort_cash_control.action_card_control
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_card_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_list
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_search
+msgid "Card Controls"
+msgstr "Contrôles carte"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "Card Controls to Check"
+msgstr "Contrôles carte à vérifier"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_company__card_control_journal_ids
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_config_settings__card_control_journal_ids
+msgid "Card Journals"
+msgstr "Journaux carte"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_company__card_control_method_line_ids
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_config_settings__card_control_method_line_ids
+msgid "Card Payment Methods"
+msgstr "Modes de paiement carte"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/card_control.py:0
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_form
+msgid "Card Payments"
+msgstr "Paiements carte"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Card controls to check"
+msgstr "Contrôles carte à vérifier"
+
+#. module: mconfort_cash_control
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_control_root
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.res_config_settings_view_form
+msgid "Cash Control"
+msgstr "Contrôle de caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_cash_control_day
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_account_payment__cash_day_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__day_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__day_id
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+msgid "Cash Day"
+msgstr "Journée de caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.actions.act_window,name:mconfort_cash_control.action_cash_control_day
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_control_day
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_list
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_search
+msgid "Cash Days"
+msgstr "Journées de caisse"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "Cash Days with a Difference"
+msgstr "Journées de caisse avec écart"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.res_config_settings_view_form
+msgid "Cash Drawer"
+msgstr "Tiroir-caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__movement_in_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__movement_in_amount
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_control_day_wizard__movement_type__in
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_control_movement__type__in
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_search
+msgid "Cash In"
+msgstr "Entrée de caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.actions.act_window,name:mconfort_cash_control.action_cash_control_movement
+#: model:ir.actions.act_window,name:mconfort_cash_control.action_cash_control_movement_new
+#: model:ir.model,name:mconfort_cash_control.model_cash_control_movement
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__movement_ids
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_control_movement
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_list
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_search
+msgid "Cash In / Out"
+msgstr "Entrées / sorties de caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__journal_id
+msgid "Cash Journal"
+msgstr "Journal de caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__movement_out_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__movement_out_amount
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_control_day_wizard__movement_type__out
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_control_movement__type__out
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_search
+msgid "Cash Out"
+msgstr "Sortie de caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__payment_out_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__payment_out_amount
+msgid "Cash Paid Out"
+msgstr "Espèces décaissées"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__payment_ids
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+msgid "Cash Payments"
+msgstr "Paiements en espèces"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__payment_in_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__payment_in_amount
+msgid "Cash Received"
+msgstr "Espèces encaissées"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "Cash Refunds and Payouts"
+msgstr "Remboursements et sorties en espèces"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "Cash control is for sellers and controllers."
+msgstr "Le contrôle de caisse est réservé aux vendeurs et aux contrôleurs."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid ""
+"Cash control is not configured: choose the controlled cash journal in the "
+"Sales settings."
+msgstr ""
+"Le contrôle de caisse n'est pas configuré : choisissez le journal de caisse "
+"contrôlé dans les paramètres des Ventes."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid "Cash days cannot be deleted."
+msgstr "Les journées de caisse ne peuvent pas être supprimées."
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Cash difference"
+msgstr "Écart de caisse"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.res_config_settings_view_form
+msgid "Cash journal under control and the float meant to stay in the drawer."
+msgstr ""
+"Journal de caisse contrôlé et fond de caisse destiné à rester dans le "
+"tiroir."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_company__cash_control_journal_id
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_config_settings__cash_control_journal_id
+msgid "Cash journal whose payments feed the cash day."
+msgstr "Journal de caisse dont les paiements alimentent la journée de caisse."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_movement.py:0
+msgid "Cash movements cannot be deleted."
+msgstr "Les mouvements de caisse ne peuvent pas être supprimés."
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Cash payments (net)"
+msgstr "Paiements en espèces (net)"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Cash refunds and payouts"
+msgstr "Remboursements et sorties en espèces"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/card_control.py:0
+msgid "Choose the card journals in the Sales settings first."
+msgstr "Choisissez d'abord les journaux carte dans les paramètres des Ventes."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Close the Day"
+msgstr "Clôturer la journée"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid ""
+"Close the cash day with this counted amount? It cannot be changed "
+"afterwards."
+msgstr ""
+"Clôturer la journée de caisse avec ce montant compté ? Il ne pourra plus "
+"être modifié."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_control_day__state__closed
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_search
+msgid "Closed"
+msgstr "Clôturée"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__closed_at
+msgid "Closed At"
+msgstr "Clôturée le"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__closed_by
+msgid "Closed By"
+msgstr "Clôturée par"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "Closed Cash Days"
+msgstr "Journées de caisse clôturées"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__closing_note
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__closing_note
+msgid "Closing Note"
+msgstr "Note de clôture"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Closing note: explain any gap..."
+msgstr "Note de clôture : expliquez tout écart..."
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__company_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__company_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__company_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__company_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_form
+msgid "Comparison"
+msgstr "Comparaison"
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: mconfort_cash_control
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_control_config
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__amount_contactless
+msgid "Contactless"
+msgstr "Sans contact"
+
+#. module: mconfort_cash_control
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_control_controller
+msgid "Control"
+msgstr "Contrôle"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_company__cash_control_journal_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_config_settings__cash_control_journal_id
+msgid "Controlled Cash Journal"
+msgstr "Journal de caisse contrôlé"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__counted_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__counted_amount
+msgid "Counted Amount"
+msgstr "Montant compté"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_safe_deposit__difference
+msgid "Counted amount minus declared amount, once verified."
+msgstr "Montant compté moins montant déclaré, une fois vérifié."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day__float_gap
+msgid "Counted amount minus the reference float. Informational."
+msgstr "Montant compté moins le fond de caisse de référence. Indicatif."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day__difference
+msgid "Counted amount minus theoretical amount at closing."
+msgstr "Montant compté moins le montant théorique à la clôture."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day__opening_amount
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day_wizard__day_opening_amount
+msgid ""
+"Counted amount of the previous closed day. Only the very first day is typed,"
+" by a controller."
+msgstr ""
+"Montant compté de la journée clôturée précédente. Seule la toute première "
+"journée est saisie, par un contrôleur."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Counted in the drawer"
+msgstr "Compté dans le tiroir"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day__count_gap
+msgid "Counted minus theoretical, shown live while counting."
+msgstr "Compté moins théorique, affiché en direct pendant le comptage."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__create_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__create_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__create_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__create_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__create_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__create_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__create_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__create_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__create_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__create_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__currency_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__currency_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__currency_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__currency_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__currency_id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: mconfort_cash_control
+#: model:ir.actions.client,name:mconfort_cash_control.action_cash_control_dashboard_client
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_control_dashboard
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__date
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_search
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_search
+msgid "Date"
+msgstr "Date"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__day_id
+msgid "Day"
+msgstr "Journée"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_card_control__date
+msgid "Day controlled: Odoo counts the card payments dated that day."
+msgstr "Jour contrôlé : Odoo compte les paiements carte datés de ce jour."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+msgid "Declare"
+msgstr "Déclarer"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.xml:0
+#: model:ir.actions.act_window,name:mconfort_cash_control.action_cash_safe_deposit_new
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_safe_deposit_new
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Declare a Deposit"
+msgstr "Déclarer un dépôt"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+msgid ""
+"Declare this deposit? Its lines can no longer be changed and the amount "
+"leaves the drawer. Write the deposit number on the envelope."
+msgstr ""
+"Déclarer ce dépôt ? Ses lignes ne pourront plus être modifiées et le montant"
+" sort du tiroir. Écrivez le numéro du dépôt sur l'enveloppe."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_safe_deposit__state__declared
+msgid "Declared"
+msgstr "Déclaré"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__declared_at
+msgid "Declared At"
+msgstr "Déclaré le"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__amount_deferred_30
+msgid "Deferred 30 Days"
+msgstr "Différé 30 jours"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__amount_deferred_60
+msgid "Deferred 60 Days"
+msgstr "Différé 60 jours"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__amount_deferred_90
+msgid "Deferred 90 Days"
+msgstr "Différé 90 jours"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__deposit_id
+msgid "Deposit"
+msgstr "Dépôt"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Deposit difference"
+msgstr "Écart des dépôts"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__deposit_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__deposit_amount
+msgid "Deposited in Safe"
+msgstr "Déposé au coffre"
+
+#. module: mconfort_cash_control
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_safe_deposit
+msgid "Deposits"
+msgstr "Dépôts"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+#: model:ir.actions.act_window,name:mconfort_cash_control.action_cash_safe_deposit_to_verify
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_safe_deposit_to_verify
+msgid "Deposits to Verify"
+msgstr "Dépôts à vérifier"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Deposits to verify (all dates)"
+msgstr "Dépôts à vérifier (toutes dates)"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "Deposits with a Difference"
+msgstr "Dépôts avec écart"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Detail"
+msgstr "Détail"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__difference
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__difference
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__difference
+msgid "Difference"
+msgstr "Écart"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/wizard/cash_control_day_wizard.py:0
+msgid "Difference: %(gap)s"
+msgstr "Écart : %(gap)s"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_account_payment__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_ir_ui_menu__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_company__display_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Done"
+msgstr "Fermer"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__card_control__state__draft
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_safe_deposit__state__draft
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_search
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "Draft Deposit"
+msgstr "Dépôt brouillon"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Drawer now (theoretical)"
+msgstr "Tiroir actuel (théorique)"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "First cash day: count the drawer and type the amount."
+msgstr ""
+"Première journée de caisse : comptez le tiroir et saisissez le montant."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__float_gap
+msgid "Float Gap"
+msgstr "Écart au fond de caisse"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+msgid "Frozen at closing"
+msgstr "Figé à la clôture"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__count_gap
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__count_gap
+msgid "Gap"
+msgstr "Écart"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "Gap: %(gap)s"
+msgstr "Écart : %(gap)s"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_account_payment__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_ir_ui_menu__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_company__id
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_config_settings__id
+msgid "ID"
+msgstr "ID"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__amount_immediate
+msgid "Immediate"
+msgstr "Immédiat"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__write_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__write_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__write_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__write_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__write_uid
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__write_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__write_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__write_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__write_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__write_date
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__write_date
+msgid "Last Updated on"
+msgstr "Dernière modification le"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day__theoretical_amount
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day_wizard__theoretical_amount
+msgid "Live while the day is open, frozen at closing."
+msgstr "Calculé en direct tant que la journée est ouverte, figé à la clôture."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__card_control__state__matched
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_search
+msgid "Matched"
+msgstr "Concordant"
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_ir_ui_menu
+msgid "Menu"
+msgstr "Menu"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__movement_type
+msgid "Movement Type"
+msgstr "Type de mouvement"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#. odoo-python
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.xml:0
+#: code:addons/mconfort_cash_control/wizard/cash_control_day_wizard.py:0
+#: model:ir.actions.server,name:mconfort_cash_control.action_my_cash_day
+#: model:ir.model,name:mconfort_cash_control.model_cash_control_day_wizard
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_my_cash_day
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "My Cash Day"
+msgstr "Ma journée de caisse"
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.xml:0
+#: model:ir.actions.act_window,name:mconfort_cash_control.action_cash_safe_deposit_mine
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_safe_deposit_mine
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "My Deposits"
+msgstr "Mes dépôts"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__day_name
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/account_payment.py:0
+msgid ""
+"No cash day is open for %(journal)s. Open the cash day before recording a "
+"cash payment."
+msgstr ""
+"Aucune journée de caisse n'est ouverte pour %(journal)s. Ouvrez la journée "
+"de caisse avant d'enregistrer un paiement en espèces."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/wizard/cash_control_day_wizard.py:0
+msgid "No cash day is open."
+msgstr "Aucune journée de caisse n'est ouverte."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "No cash day is open. Open the cash day before declaring a deposit."
+msgstr ""
+"Aucune journée de caisse n'est ouverte. Ouvrez la journée de caisse avant de"
+" déclarer un dépôt."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_movement.py:0
+msgid "No cash day is open. Open the cash day first."
+msgstr ""
+"Aucune journée de caisse n'est ouverte. Ouvrez d'abord la journée de caisse."
+
+#. module: mconfort_cash_control
+#. odoo-javascript
+#: code:addons/mconfort_cash_control/static/src/dashboard/cash_control_dashboard.js:0
+msgid "No cash day open"
+msgstr "Aucune journée de caisse ouverte"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_safe_deposit__name
+msgid "Number written on the envelope, given at declaration."
+msgstr "Numéro à écrire sur l'enveloppe, attribué à la déclaration."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__validated_total_odoo
+msgid "Odoo Total at Validation"
+msgstr "Total Odoo à la validation"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "Only a controller can verify a deposit."
+msgstr "Seul un contrôleur peut vérifier un dépôt."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "Only a declared deposit can be verified."
+msgstr "Seul un dépôt déclaré peut être vérifié."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_company__card_control_method_line_ids
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_config_settings__card_control_method_line_ids
+msgid ""
+"Only count payments made with these methods. Leave empty to count every "
+"payment of the card journals."
+msgstr ""
+"Ne compter que les paiements faits avec ces modes. Laisser vide pour compter"
+" tous les paiements des journaux carte."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid ""
+"Only the counted amount and the closing note can be typed on a cash day."
+msgstr ""
+"Seuls le montant compté et la note de clôture peuvent être saisis sur une "
+"journée de caisse."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/card_control.py:0
+msgid "Only the day and the bank totals can be typed on a card control."
+msgstr ""
+"Seuls le jour et les totaux bancaires peuvent être saisis sur un contrôle "
+"carte."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "Only the order and the amount of a deposit line can be changed."
+msgstr ""
+"Seuls la commande et le montant d'une ligne de dépôt peuvent être modifiés."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_control_day__state__open
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_search
+msgid "Open"
+msgstr "Ouverte"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_search
+msgid "Open Day"
+msgstr "Journée ouverte"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Open the Day"
+msgstr "Ouvrir la journée"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+msgid "Open the Next Day"
+msgstr "Ouvrir la journée suivante"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+msgid "Open the cash day"
+msgstr "Ouvrir la journée de caisse"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__user_id
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_search
+msgid "Opened By"
+msgstr "Ouverte par"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__day_opening_amount
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Opening"
+msgstr "Ouverture"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__opening_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__opening_amount
+msgid "Opening Amount"
+msgstr "Montant d'ouverture"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit_line__sale_order_id
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "Order"
+msgstr "Commande"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__line_ids
+msgid "Orders"
+msgstr "Commandes"
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__movement_reason
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__reason
+msgid "Reason"
+msgstr "Motif"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Record"
+msgstr "Enregistrer"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__user_id
+msgid "Recorded By"
+msgstr "Enregistré par"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_company__cash_reference_float
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_res_config_settings__cash_reference_float
+msgid "Reference Float"
+msgstr "Fond de caisse de référence"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_cash_control_day__closing_note
+msgid "Required when the counted amount differs from the theoretical amount."
+msgstr "Obligatoire lorsque le montant compté diffère du montant théorique."
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_cash_safe_deposit
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+msgid "Safe Deposit"
+msgstr "Dépôt au coffre"
+
+#. module: mconfort_cash_control
+#: model:ir.model,name:mconfort_cash_control.model_cash_safe_deposit_line
+msgid "Safe Deposit Line"
+msgstr "Ligne de dépôt au coffre"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__deposit_ids
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_list
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "Safe Deposits"
+msgstr "Dépôts au coffre"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__user_id
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "Seller"
+msgstr "Vendeur"
+
+#. module: mconfort_cash_control
+#: model:ir.ui.menu,name:mconfort_cash_control.menu_cash_control_settings
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+msgid "Should be in the drawer"
+msgstr "Doit être dans le tiroir"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "Should be in the drawer ·"
+msgstr "Doit être dans le tiroir ·"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__state
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__state
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__state
+msgid "State"
+msgstr "État"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "Status"
+msgstr "Statut"
+
+#. module: mconfort_cash_control
+#: model:ir.model.constraint,message:mconfort_cash_control.constraint_cash_control_movement_amount_positive
+#: model:ir.model.constraint,message:mconfort_cash_control.constraint_cash_safe_deposit_line_amount_positive
+msgid "The amount must be positive."
+msgstr "Le montant doit être positif."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_dashboard.py:0
+msgid "The cash control dashboard is for controllers."
+msgstr "Le tableau de bord du contrôle de caisse est réservé aux contrôleurs."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/account_payment.py:0
+msgid "The cash day of a payment is set by the system."
+msgstr "La journée de caisse d'un paiement est définie par le système."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid ""
+"The count differs from the theoretical amount: recount, or explain the gap "
+"in the closing note."
+msgstr ""
+"Le comptage diffère du montant théorique : recomptez, ou expliquez l'écart "
+"dans la note de clôture."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid ""
+"The counted amount differs from the theoretical amount by %(gap)s. Explain "
+"the difference in the closing note before closing."
+msgstr ""
+"Le montant compté diffère du montant théorique de %(gap)s. Expliquez l'écart"
+" dans la note de clôture avant de clôturer."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid ""
+"The first cash day must be opened by a controller, who types the opening "
+"amount."
+msgstr ""
+"La première journée de caisse doit être ouverte par un contrôleur, qui "
+"saisit le montant d'ouverture."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid "The lines of a declared deposit cannot be changed."
+msgstr "Les lignes d'un dépôt déclaré ne peuvent pas être modifiées."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "The opening amount is the amount counted at the last closing."
+msgstr "Le montant d'ouverture est le montant compté à la dernière clôture."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__theoretical_amount
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day_wizard__theoretical_amount
+msgid "Theoretical Amount"
+msgstr "Montant théorique"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_day__closing_theoretical_amount
+msgid "Theoretical Amount at Closing"
+msgstr "Montant théorique à la clôture"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/card_control.py:0
+msgid "This card control is already validated."
+msgstr "Ce contrôle carte est déjà validé."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_control_day.py:0
+msgid "This cash day is already closed."
+msgstr "Cette journée de caisse est déjà clôturée."
+
+#. module: mconfort_cash_control
+#: model:ir.model.constraint,message:mconfort_cash_control.constraint_card_control_date_unique
+msgid "This day already has a card control."
+msgstr "Ce jour a déjà un contrôle carte."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_list
+msgid "Time"
+msgstr "Heure"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__card_control__state__to_check
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_search
+msgid "To Check"
+msgstr "À vérifier"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "To Verify"
+msgstr "À vérifier"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_list
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_list
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_movement_view_list
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_list
+msgid "Total"
+msgstr "Total"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__total_files
+msgid "Total Files"
+msgstr "Total fichiers"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__total_odoo
+msgid "Total Odoo"
+msgstr "Total Odoo"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_control_movement__type
+msgid "Type"
+msgstr "Type"
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/wizard/cash_control_day_wizard.py:0
+msgid "Type a positive amount and a reason."
+msgstr "Saisissez un montant positif et un motif."
+
+#. module: mconfort_cash_control
+#. odoo-python
+#: code:addons/mconfort_cash_control/models/cash_safe_deposit.py:0
+msgid ""
+"Type the counted amount. For an empty envelope, explain it in the "
+"verification note."
+msgstr ""
+"Saisissez le montant compté. Pour une enveloppe vide, expliquez-le dans la "
+"note de vérification."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_form
+msgid "Validate"
+msgstr "Valider"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.card_control_view_form
+msgid ""
+"Validate this card control? The Odoo total is frozen and the amounts can no "
+"longer be changed."
+msgstr ""
+"Valider ce contrôle carte ? Le total Odoo est figé et les montants ne "
+"pourront plus être modifiés."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__validated_at
+msgid "Validated At"
+msgstr "Validé le"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_card_control__user_id
+msgid "Validated By"
+msgstr "Validé par"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_card_control__total_odoo
+msgid ""
+"Validated card payments of the day, inbound minus outbound. Live while "
+"draft, frozen at validation."
+msgstr ""
+"Paiements carte validés du jour, entrées moins sorties. Calculé en direct en"
+" brouillon, figé à la validation."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.res_config_settings_view_form
+msgid ""
+"Validated payments counted as card when comparing with the bank totals."
+msgstr ""
+"Paiements validés comptés comme carte lors de la comparaison avec les totaux"
+" bancaires."
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_company__card_control_journal_ids
+#: model:ir.model.fields,help:mconfort_cash_control.field_res_config_settings__card_control_journal_ids
+msgid ""
+"Validated payments of these journals are compared with the bank card totals."
+msgstr ""
+"Les paiements validés de ces journaux sont comparés aux totaux carte de la "
+"banque."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+msgid "Verification"
+msgstr "Vérification"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__verification_note
+msgid "Verification Note"
+msgstr "Note de vérification"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields.selection,name:mconfort_cash_control.selection__cash_safe_deposit__state__verified
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "Verified"
+msgstr "Vérifié"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__verified_at
+msgid "Verified At"
+msgstr "Vérifié le"
+
+#. module: mconfort_cash_control
+#: model:ir.model.fields,field_description:mconfort_cash_control.field_cash_safe_deposit__verified_by
+msgid "Verified By"
+msgstr "Vérifié par"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+msgid "Verify"
+msgstr "Vérifier"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_form
+msgid ""
+"Verify this deposit with the counted amount? It cannot be changed "
+"afterwards."
+msgstr ""
+"Vérifier ce dépôt avec le montant compté ? Il ne pourra plus être modifié."
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_search
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_safe_deposit_view_search
+msgid "With a Difference"
+msgstr "Avec écart"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "− Cash out"
+msgstr "− Sorties de caisse"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "− Cash paid out"
+msgstr "− Espèces décaissées"
+
+#. module: mconfort_cash_control
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_view_form
+#: model_terms:ir.ui.view,arch_db:mconfort_cash_control.cash_control_day_wizard_view_form
+msgid "− Deposited in safe"
+msgstr "− Déposé au coffre"

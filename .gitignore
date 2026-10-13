@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+
+# Local working notes (client data, staff logins): kept off the public repository.
+CLAUDE.md
+SPEC.md
+PHASE0_FINDINGS.md

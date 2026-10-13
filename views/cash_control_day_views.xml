@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Seller-first layout ("Ma journée de caisse"), usable on a phone:
+         1. what should be in the drawer, 2. one-tap actions, 3. the count, 4. the detail. -->
+    <record id="cash_control_day_view_form" model="ir.ui.view">
+        <field name="name">cash.control.day.form</field>
+        <field name="model">cash.control.day</field>
+        <field name="arch" type="xml">
+            <form string="Cash Day" delete="false" duplicate="false">
+                <header>
+                    <button name="action_open_day" type="object" string="Open the Day"
+                            class="oe_highlight" invisible="id"/>
+                    <button name="%(action_cash_control_movement_new)d" type="action" string="Cash In"
+                            icon="fa-plus" context="{'default_type': 'in'}"
+                            invisible="not id or state != 'open'"/>
+                    <button name="%(action_cash_control_movement_new)d" type="action" string="Cash Out"
+                            icon="fa-minus" context="{'default_type': 'out'}"
+                            invisible="not id or state != 'open'"/>
+                    <button name="%(action_cash_safe_deposit_new)d" type="action" string="Declare a Deposit"
+                            icon="fa-archive" invisible="not id or state != 'open'"/>
+                    <button name="action_close" type="object" string="Close the Day"
+                            class="oe_highlight" invisible="not id or state != 'open'"
+                            confirm="Close the cash day with this counted amount? It cannot be changed afterwards."/>
+                    <button name="action_my_cash_day" type="object" string="Open the Next Day"
+                            class="oe_highlight" invisible="state != 'closed'"/>
+                    <field name="state" widget="statusbar" invisible="not id"/>
+                </header>
+                <sheet>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="can_edit_opening" invisible="1"/>
+
+                    <!-- Opening (new record) -->
+                    <div invisible="id">
+                        <h1>Open the cash day</h1>
+                        <p class="text-muted" invisible="can_edit_opening">
+                            The opening amount is the amount counted at the last closing.
+                        </p>
+                        <p class="text-muted" invisible="not can_edit_opening">
+                            First cash day: count the drawer and type the amount.
+                        </p>
+                    </div>
+
+                    <!-- The day -->
+                    <div invisible="not id">
+                        <div class="d-flex flex-wrap justify-content-between align-items-baseline gap-2">
+                            <h1 class="mb-0"><field name="name"/></h1>
+                            <div class="text-muted">
+                                <field name="date"/> · <field name="user_id"/>
+                            </div>
+                        </div>
+
+                        <div class="row g-2 my-3">
+                            <div class="col-12 col-md-6">
+                                <div class="border rounded p-3 h-100 bg-light">
+                                    <div class="text-muted small">Should be in the drawer</div>
+                                    <div class="fs-1 fw-bold"><field name="theoretical_amount"/></div>
+                                    <div class="small text-muted" invisible="state != 'closed'">Frozen at closing</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="border rounded p-3 h-100">
+                                    <div class="text-muted small">Counted in the drawer</div>
+                                    <div class="fs-1 fw-bold">
+                                        <field name="counted_amount" readonly="state != 'open'"/>
+                                    </div>
+                                    <div invisible="state == 'open' and not counted_amount">
+                                        <span class="text-muted small">Gap: </span>
+                                        <field name="count_gap" class="fw-bold"
+                                               decoration-danger="count_gap != 0" decoration-success="count_gap == 0"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning" role="status"
+                             invisible="state != 'open' or not counted_amount or not count_gap or closing_note">
+                            The count differs from the theoretical amount: recount, or explain the gap in the closing note.
+                        </div>
+                        <field name="closing_note" readonly="state != 'open'"
+                               placeholder="Closing note: explain any gap..."/>
+                    </div>
+
+                    <!-- Detail, also holds the opening amount typed on a new (first) day: one occurrence only. -->
+                    <group>
+                        <group string="Detail">
+                            <field name="opening_amount" string="Opening" readonly="id or not can_edit_opening"/>
+                            <field name="payment_in_amount" string="+ Cash received" invisible="not id"/>
+                            <field name="payment_out_amount" string="− Cash paid out" invisible="not id"/>
+                            <field name="movement_in_amount" string="+ Cash in" invisible="not id"/>
+                            <field name="movement_out_amount" string="− Cash out" invisible="not id"/>
+                            <field name="deposit_amount" string="− Deposited in safe" invisible="not id"/>
+                        </group>
+                        <group invisible="state != 'closed'">
+                            <field name="closed_by"/>
+                            <field name="closed_at"/>
+                            <field name="float_gap"/>
+                            <field name="journal_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+
+                    <div invisible="not id">
+                        <notebook>
+                            <page string="Cash Payments" name="payments">
+                                <field name="payment_ids">
+                                    <list>
+                                        <field name="company_currency_id" column_invisible="1"/>
+                                        <field name="name"/>
+                                        <field name="partner_id"/>
+                                        <field name="memo" optional="hide"/>
+                                        <field name="amount_company_currency_signed" string="Amount" sum="Total"/>
+                                        <field name="state" widget="badge"
+                                               decoration-success="state == 'paid'"
+                                               decoration-muted="state in ('canceled', 'rejected')"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Cash In / Out" name="movements">
+                                <field name="movement_ids">
+                                    <list>
+                                        <field name="currency_id" column_invisible="1"/>
+                                        <field name="create_date" string="Time"/>
+                                        <field name="type"/>
+                                        <field name="amount" sum="Total"/>
+                                        <field name="reason"/>
+                                        <field name="user_id" optional="hide"/>
+                                    </list>
+                                </field>
+                            </page>
+                            <page string="Safe Deposits" name="deposits">
+                                <field name="deposit_ids">
+                                    <list>
+                                        <field name="currency_id" column_invisible="1"/>
+                                        <field name="name"/>
+                                        <field name="user_id" optional="hide"/>
+                                        <field name="amount_declared" sum="Total"/>
+                                        <field name="state" widget="badge"
+                                               decoration-info="state == 'declared'"
+                                               decoration-success="state == 'verified'"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cash_control_day_view_list" model="ir.ui.view">
+        <field name="name">cash.control.day.list</field>
+        <field name="model">cash.control.day</field>
+        <field name="arch" type="xml">
+            <list string="Cash Days" decoration-danger="difference != 0" decoration-info="state == 'open'">
+                <field name="currency_id" column_invisible="1"/>
+                <field name="name"/>
+                <field name="date"/>
+                <field name="user_id" optional="show"/>
+                <field name="opening_amount" optional="hide"/>
+                <field name="theoretical_amount"/>
+                <field name="counted_amount"/>
+                <field name="difference" sum="Total"/>
+                <field name="state" widget="badge" decoration-info="state == 'open'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="cash_control_day_view_search" model="ir.ui.view">
+        <field name="name">cash.control.day.search</field>
+        <field name="model">cash.control.day</field>
+        <field name="arch" type="xml">
+            <search string="Cash Days">
+                <field name="name"/>
+                <field name="user_id"/>
+                <filter name="open" string="Open" domain="[('state', '=', 'open')]"/>
+                <filter name="closed" string="Closed" domain="[('state', '=', 'closed')]"/>
+                <filter name="with_difference" string="With a Difference" domain="[('difference', '!=', 0)]"/>
+                <separator/>
+                <filter name="date" string="Date" date="date"/>
+                <group>
+                    <filter name="group_user" string="Opened By" context="{'group_by': 'user_id'}"/>
+                    <filter name="group_date" string="Date" context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_cash_control_day" model="ir.actions.act_window">
+        <field name="name">Cash Days</field>
+        <field name="res_model">cash.control.day</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="cash_control_day_view_search"/>
+    </record>
+
+    <record id="action_my_cash_day" model="ir.actions.server">
+        <field name="name">My Cash Day</field>
+        <field name="model_id" ref="model_cash_control_day"/>
+        <field name="state">code</field>
+        <field name="code">action = model.action_my_cash_day()</field>
+    </record>
+
+</odoo>

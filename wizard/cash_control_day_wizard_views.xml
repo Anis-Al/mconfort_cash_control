@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cash_control_day_wizard_view_form" model="ir.ui.view">
+        <field name="name">cash.control.day.wizard.form</field>
+        <field name="model">cash.control.day.wizard</field>
+        <field name="arch" type="xml">
+            <form string="My Cash Day">
+                <field name="currency_id" invisible="1"/>
+                <field name="day_id" invisible="1"/>
+                <field name="can_edit_opening" invisible="1"/>
+
+                <!-- No open day: open it -->
+                <div invisible="day_id">
+                    <p class="text-muted" invisible="can_edit_opening">
+                        The opening amount is the amount counted at the last closing.
+                    </p>
+                    <p class="text-muted" invisible="not can_edit_opening">
+                        First cash day: count the drawer and type the amount.
+                    </p>
+                    <group>
+                        <field name="opening_amount" string="Opening" readonly="not can_edit_opening"/>
+                    </group>
+                </div>
+
+                <!-- Open day -->
+                <div invisible="not day_id">
+                    <div class="row g-2 mb-3">
+                        <div class="col-12 col-md-6">
+                            <div class="border rounded p-3 h-100 bg-light">
+                                <div class="text-muted small">Should be in the drawer · <field name="day_name"/></div>
+                                <div class="fs-1 fw-bold"><field name="theoretical_amount"/></div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="border rounded p-3 h-100">
+                                <div class="text-muted small">Counted in the drawer</div>
+                                <div class="fs-1 fw-bold"><field name="counted_amount"/></div>
+                                <div invisible="not counted_amount">
+                                    <span class="text-muted small">Gap: </span>
+                                    <field name="count_gap" class="fw-bold"
+                                           decoration-danger="count_gap != 0" decoration-success="count_gap == 0"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning" role="status"
+                         invisible="not counted_amount or not count_gap or closing_note">
+                        The count differs from the theoretical amount: recount, or explain the gap in the closing note.
+                    </div>
+                    <field name="closing_note" placeholder="Closing note: explain any gap..."/>
+
+                    <group>
+                        <group string="Cash In / Out">
+                            <field name="movement_type" widget="radio" options="{'horizontal': true}" nolabel="1" colspan="2"/>
+                            <field name="movement_amount"/>
+                            <field name="movement_reason"/>
+                            <div colspan="2">
+                                <button name="action_add_movement" type="object" string="Record"
+                                        icon="fa-check" class="btn-secondary"/>
+                            </div>
+                        </group>
+                        <group string="Detail">
+                            <field name="day_opening_amount"/>
+                            <field name="payment_in_amount" string="+ Cash received"/>
+                            <field name="payment_out_amount" string="− Cash paid out"/>
+                            <field name="movement_in_amount" string="+ Cash in"/>
+                            <field name="movement_out_amount" string="− Cash out"/>
+                            <field name="deposit_amount" string="− Deposited in safe"/>
+                        </group>
+                    </group>
+                </div>
+
+                <footer>
+                    <button name="action_open_day" type="object" string="Open the Day"
+                            class="btn-primary" invisible="day_id"/>
+                    <button name="action_close_day" type="object" string="Close the Day"
+                            class="btn-primary" invisible="not day_id"
+                            confirm="Close the cash day with this counted amount? It cannot be changed afterwards."/>
+                    <button name="%(action_cash_safe_deposit_new)d" type="action" string="Declare a Deposit"
+                            class="btn-secondary" invisible="not day_id"/>
+                    <button name="action_view_day" type="object" string="Detail"
+                            class="btn-secondary" invisible="not day_id"/>
+                    <button string="Done" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

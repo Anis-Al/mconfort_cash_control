@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <!-- Home page of the app (root menu action): never a pop-up, so closing "My Cash Day"
+         always lands back here. Sellers: drawer + shortcuts. Controllers: + period and KPIs. -->
+    <t t-name="mconfort_cash_control.CashControlDashboard">
+        <Layout display="display">
+            <t t-set-slot="control-panel-navigation-additional">
+                <div class="btn-group" role="group" t-if="state.data?.is_controller">
+                    <t t-foreach="periods" t-as="period" t-key="period[0]">
+                        <button type="button" class="btn btn-secondary"
+                                t-att-class="{ active: state.period === period[0] }"
+                                t-on-click="() => this.setPeriod(period[0])"
+                                t-esc="period[1]"/>
+                    </t>
+                </div>
+            </t>
+            <div class="container-fluid py-3" t-if="state.data">
+                <!-- Seller shortcuts; controllers don't work the drawer (the drawer card still opens the wizard). -->
+                <div class="d-flex flex-wrap gap-2 mb-3" t-if="!state.data.is_controller">
+                    <button type="button" class="btn btn-primary btn-lg" t-on-click="() => this.openDrawer()">
+                        <i class="fa fa-money me-2"/>My Cash Day
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-lg"
+                            t-on-click="() => this.openAction('mconfort_cash_control.action_cash_safe_deposit_new')">
+                        <i class="fa fa-archive me-2"/>Declare a Deposit
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-lg"
+                            t-on-click="() => this.openAction('mconfort_cash_control.action_cash_safe_deposit_mine')">
+                        <i class="fa fa-list me-2"/>My Deposits
+                    </button>
+                </div>
+                <div class="row g-2">
+                    <t t-foreach="cards" t-as="card" t-key="card.key">
+                        <div class="col-6 col-lg-3">
+                            <button type="button" class="btn btn-light border w-100 h-100 text-start p-3"
+                                    t-on-click="card.open">
+                                <div class="text-muted small" t-esc="card.label"/>
+                                <div class="fs-3 fw-bold" t-att-class="{ 'text-danger': card.alert }" t-esc="card.value"/>
+                                <div class="small" t-if="card.sub" t-esc="card.sub"/>
+                            </button>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </Layout>
+    </t>
+
+</templates>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Cash day -->
+    <record id="cash_control_day_rule_company" model="ir.rule">
+        <field name="name">Cash day: multi-company</field>
+        <field name="model_id" ref="model_cash_control_day"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <!-- One drawer: the open day belongs to whoever works the drawer, so sellers see it too. -->
+    <record id="cash_control_day_rule_seller" model="ir.rule">
+        <field name="name">Cash day: seller sees own days and the open day</field>
+        <field name="model_id" ref="model_cash_control_day"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('state', '=', 'open')]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+    <record id="cash_control_day_rule_controller" model="ir.rule">
+        <field name="name">Cash day: controller sees all</field>
+        <field name="model_id" ref="model_cash_control_day"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_manager'))]"/>
+    </record>
+
+    <!-- Cash in / out -->
+    <record id="cash_control_movement_rule_company" model="ir.rule">
+        <field name="name">Cash movement: multi-company</field>
+        <field name="model_id" ref="model_cash_control_movement"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="cash_control_movement_rule_seller" model="ir.rule">
+        <field name="name">Cash movement: seller sees own days and the open day</field>
+        <field name="model_id" ref="model_cash_control_movement"/>
+        <field name="domain_force">['|', ('day_id.user_id', '=', user.id), ('day_id.state', '=', 'open')]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+    <record id="cash_control_movement_rule_controller" model="ir.rule">
+        <field name="name">Cash movement: controller sees all</field>
+        <field name="model_id" ref="model_cash_control_movement"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_manager'))]"/>
+    </record>
+
+    <!-- Safe deposits: write/unlink are further limited in the model (draft only, controller fields). -->
+    <record id="cash_safe_deposit_rule_company" model="ir.rule">
+        <field name="name">Safe deposit: multi-company</field>
+        <field name="model_id" ref="model_cash_safe_deposit"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="cash_safe_deposit_rule_seller" model="ir.rule">
+        <field name="name">Safe deposit: seller sees own deposits and those of the open day</field>
+        <field name="model_id" ref="model_cash_safe_deposit"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('day_id.state', '=', 'open')]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+    <record id="cash_safe_deposit_rule_controller" model="ir.rule">
+        <field name="name">Safe deposit: controller sees all</field>
+        <field name="model_id" ref="model_cash_safe_deposit"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_manager'))]"/>
+    </record>
+
+    <record id="cash_safe_deposit_line_rule_company" model="ir.rule">
+        <field name="name">Safe deposit line: multi-company</field>
+        <field name="model_id" ref="model_cash_safe_deposit_line"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="cash_safe_deposit_line_rule_seller" model="ir.rule">
+        <field name="name">Safe deposit line: seller sees own deposits and those of the open day</field>
+        <field name="model_id" ref="model_cash_safe_deposit_line"/>
+        <field name="domain_force">['|', ('deposit_id.user_id', '=', user.id), ('deposit_id.day_id.state', '=', 'open')]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+    <record id="cash_safe_deposit_line_rule_controller" model="ir.rule">
+        <field name="name">Safe deposit line: controller sees all</field>
+        <field name="model_id" ref="model_cash_safe_deposit_line"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[Command.link(ref('sales_team.group_sale_manager'))]"/>
+    </record>
+
+    <!-- Card control: Controller-only by ACL (no seller ACL at all); this rule only scopes companies. -->
+    <record id="card_control_rule_company" model="ir.rule">
+        <field name="name">Card control: multi-company</field>
+        <field name="model_id" ref="model_card_control"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

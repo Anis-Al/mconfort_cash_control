@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="card_control_view_form" model="ir.ui.view">
+        <field name="name">card.control.form</field>
+        <field name="model">card.control</field>
+        <field name="arch" type="xml">
+            <form string="Card Control" duplicate="false">
+                <header>
+                    <button name="action_validate" type="object" string="Validate"
+                            class="oe_highlight" invisible="state != 'draft'"
+                            confirm="Validate this card control? The Odoo total is frozen and the amounts can no longer be changed."/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_payments" type="object" class="oe_stat_button"
+                                icon="fa-credit-card" string="Card Payments"/>
+                    </div>
+                    <field name="currency_id" invisible="1"/>
+                    <group>
+                        <group>
+                            <field name="date" readonly="state != 'draft'"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group invisible="state == 'draft'">
+                            <field name="user_id"/>
+                            <field name="validated_at"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Bank Files">
+                            <field name="amount_contactless" readonly="state != 'draft'"/>
+                            <field name="amount_immediate" readonly="state != 'draft'"/>
+                            <field name="amount_deferred_30" readonly="state != 'draft'"/>
+                            <field name="amount_deferred_60" readonly="state != 'draft'"/>
+                            <field name="amount_deferred_90" readonly="state != 'draft'"/>
+                            <field name="total_files" class="fw-bold"/>
+                        </group>
+                        <group string="Comparison">
+                            <field name="total_odoo" class="fw-bold"/>
+                            <field name="difference" invisible="state == 'draft'"
+                                   decoration-danger="difference != 0"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="card_control_view_list" model="ir.ui.view">
+        <field name="name">card.control.list</field>
+        <field name="model">card.control</field>
+        <field name="arch" type="xml">
+            <list string="Card Controls" decoration-danger="state == 'to_check'">
+                <field name="currency_id" column_invisible="1"/>
+                <field name="date"/>
+                <field name="total_files" sum="Total"/>
+                <field name="total_odoo"/>
+                <field name="difference" sum="Total"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'matched'" decoration-danger="state == 'to_check'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="card_control_view_search" model="ir.ui.view">
+        <field name="name">card.control.search</field>
+        <field name="model">card.control</field>
+        <field name="arch" type="xml">
+            <search string="Card Controls">
+                <field name="date"/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="to_check" string="To Check" domain="[('state', '=', 'to_check')]"/>
+                <filter name="matched" string="Matched" domain="[('state', '=', 'matched')]"/>
+                <separator/>
+                <filter name="filter_date" string="Date" date="date"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_card_control" model="ir.actions.act_window">
+        <field name="name">Card Controls</field>
+        <field name="res_model">card.control</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="card_control_view_search"/>
+    </record>
+
+</odoo>
